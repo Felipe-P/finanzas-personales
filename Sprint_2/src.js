@@ -3,10 +3,10 @@ let balance = 0;
 
 const registrarOperacion = (monto, tipo, categoria, fecha) => {
   tipo == "ingreso" ? (balance += monto) : (balance -= monto);
-  operaciones.push({monto, tipo, categoria, fecha});
+  operaciones.push({ monto, tipo, categoria, fecha });
 
   localStorage.setItem("operaciones", JSON.stringify(operaciones));
-  localStorage.setItem("balance", balance);
+  localStorage.setItem("balance", JSON.stringify(balance));
 };
 
 const registrarMetaAhorro = (meta) => {
